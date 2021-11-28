@@ -5,6 +5,7 @@ val prometeusVersion: String by project
 val exposedVersion: String by project
 val pgjdbcngVersion: String by project
 val hikaricpVersion: String by project
+val kosonVersion: String by project
 
 plugins {
     application
@@ -38,6 +39,8 @@ dependencies {
 //    implementation("org.jetbrains.exposed:exposed-jdbc:$exposedVersion")
     implementation("com.impossibl.pgjdbc-ng:pgjdbc-ng:$pgjdbcngVersion")
     implementation("com.zaxxer:HikariCP:$hikaricpVersion")
+    implementation("com.lectra:koson:$kosonVersion")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
     testImplementation("io.ktor:ktor-server-tests:$ktorVersion")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion")
 }

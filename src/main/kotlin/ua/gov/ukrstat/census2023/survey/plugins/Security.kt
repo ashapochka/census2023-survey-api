@@ -10,8 +10,20 @@ import io.ktor.application.*
 import io.ktor.response.*
 import io.ktor.request.*
 
-//fun Application.configureSecurity() {
-//
+fun Application.configureSecurity() {
+    install(Authentication) {
+        basic("auth-basic") {
+            realm = "Access to the '/' path"
+            validate { credentials ->
+                if (credentials.name == System.getenv("api_user") &&
+                    credentials.password == System.getenv("api_password")) {
+                    UserIdPrincipal(credentials.name)
+                } else {
+                    null
+                }
+            }
+        }
+    }
 //    authentication {
 //        jwt {
 //            val jwtAudience = environment.config.property("jwt.audience").getString()
@@ -28,5 +40,5 @@ import io.ktor.request.*
 //            }
 //        }
 //    }
-//
-//}
+
+}
