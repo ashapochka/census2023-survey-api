@@ -1,4 +1,4 @@
-package ua.gov.ukrstat.plugins
+package ua.gov.ukrstat.census2023.survey.plugins
 
 import io.ktor.serialization.*
 import io.ktor.features.*

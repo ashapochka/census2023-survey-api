@@ -1,4 +1,4 @@
-package ua.gov.ukrstat.plugins
+package ua.gov.ukrstat.census2023.survey.plugins
 
 import com.zaxxer.hikari.HikariDataSource
 import io.ktor.application.*
@@ -15,7 +15,7 @@ fun Application.configureRouting() {
 
     routing {
         get("/") {
-            call.respondText("{\"msg\": \"Hello World!\"}", ContentType.Application.Json)
+            call.respondText("{\"msg\": \"Hail Census 2023!\"}", ContentType.Application.Json)
         }
         get("/{respondent}") {
             val respId = call.parameters["respondent"]
